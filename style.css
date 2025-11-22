@@ -1,0 +1,322 @@
+/* ==== GLOBAL ====*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg:#ffffff;
+    --text: #111;
+    --card-bg: #f7f7f7;
+    --border: #111;
+    --btn-hover-bg: #000; /* фон кнопки пр hover в светлой форме */
+    --btn-hover-text: #fff; /* текст кнопки при hover в светлой форме*/
+    --skill-hover-bg: #111;
+    --skill-hover-text: #fff;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+    --bg:#0a0a0a;
+    --text: #f5f5f5;
+    --card-bg: #131313;
+    --border: #ffffff22;
+    --btn-hover-bg: #fff; /* фон кнопки пр hover в темной форме */
+    --btn-hover-text: #000; /* текст кнопки при hover в темной форме*/
+    --skill-hover-bg: #fff;
+    --skill-hover-text: #000;
+}
+
+
+
+/* Smooth fade-up animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Smooth fade animation */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Fade elements on scroll */
+.section, .hero, footer {
+    animation: fadeUp 0.9s ease both;
+}
+
+/* ===== HEADER / HERO ===== */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 72px;
+    font-weight: 800;
+}
+
+.hero h2 {
+    margin-top: 15px;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--text);
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: var(--text);
+}
+
+#about p {
+    color: var(--text);
+}
+
+.hero-links {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+}
+
+.hero-links ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.theme-btn {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    padding: 10px 18px;
+    font-size: 14px;
+    background: none;
+    border: 1px solid currentColor;
+    border-radius: 20px;
+    color: inherit;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.theme-btn:hover {
+    opacity: 0.7;
+    transform: translateY(-3px);
+}
+
+
+.btn {
+    padding: 12px 26px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    border-color: var(--border);
+    text-decoration: none;
+    color: var(--text);
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--btn-hover-bg);
+    color: var(--btn-hover-text);
+    transform: translateY(-3px);
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    max-width: 900px;
+    margin: auto;
+    padding: 100px 20px;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+/* ===== ABOUT ===== */
+#about p {
+    font-size: 18px;
+    color: var(--text);
+    max-width: 700px;
+}
+
+/* ===== SKILLS ===== */
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.skills-list li {
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    font-size: 15px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.skills-list li:hover {
+    background: var(--skill-hover-bg);
+    color: var(--skill-hover-text);
+    transform: translateY(-4px);
+}
+
+/* ===== PROJECTS ===== */
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 16px;
+    padding: 35px;
+    margin-top: 25px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.project-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.project-links a {
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--text);
+    border-bottom: 1px solid transparent;
+    transition: 0.2s;
+}
+
+.project-links a:hover {
+    border-bottom: 1px solid var(--text);
+}
+
+/* ===== CONTACT ===== */
+.contact-list {
+    list-style: none;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-list a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.2s;
+    border-bottom: 1px solid transparent;
+}
+
+.contact-list a:hover {
+    opacity: 0.6;
+    border-bottom: 1px solid var(--text);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 15px;
+    color: #555;
+    animation-delay: 0.3s;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero h2 {
+        font-size: 18px;
+    }
+
+    .section {
+        padding: 70px 20px;
+    }
+}
+
+/* Малые телефоны, например iPhone SE / Realme Neo 3 */
+@media (max-width: 600px) {
+    .hero h1 {font-size: 36px;}
+    .hero h2 {font-size:16px;}
+    .section {padding:50px 15px;}
+    .skills-list li {font-size:13px; padding:8px 15px;}
+}
+
+/* Средние телефоны, например iPhone 16 Pro Max */
+@media (min-width: 401px) and (max-width: 768px) {
+    .hero h1 {font-size: 52px;}
+    .hero h2 {font-size:20px;}
+    .section {padding:80px 20px;}
+    .skills-list li {font-size:14px; padding:9px 18px;}
+}
+
+/* Планшеты */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero h1 {font-size:64px;}
+    .hero h2 {font-size:22px;}
+    .section {padding:90px 20px;}
+    .skills-list li {font-size:15px; padding:10px 20px;}
+}
+
+/* Ноутбуки / большие экраны */
+@media (min-width: 1025px) {
+    .hero h1 {font-size:72px;}
+    .hero h2 {font-size:22px;}
+}
+
+/* Ноутбуки / большие экраны до Full HD */
+@media (min-width: 1025px) and (max-width: 1919px) {
+    .hero h1 {font-size:72px;}
+    .hero h2 {font-size:22px;}
+    .section {padding:100px 20px;}
+}
+
+/* Full HD и выше (1920px+) */
+@media (min-width: 1920px) {
+    .hero h1 {font-size:90px;}
+    .hero h2 {font-size:28px;}
+    .section {padding:120px 40px;}
+    .skills-list li {font-size:17px; padding:12px 25px;}
+    .project-card {padding:50px;}
+}
