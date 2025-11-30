@@ -234,8 +234,13 @@ body.dark {
     list-style: none;
     margin-top: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 12px;
+}
+
+.contact-list img{
+    width: 17px;
+    margin-top: 4.5px;
 }
 
 .contact-list a {
